@@ -4300,3 +4300,4 @@ const RentalInspectionApp = () => {
 };
 
 // RentalInspectionApp is now global
+window.RentalInspectionApp = RentalInspectionApp;
