@@ -83,21 +83,34 @@
   </div>
   <div id="root"></div>
 
-  <!-- Load the JSX application file -->
-  <script type="text/babel" src="./rental-inspection-app-complete.jsx"></script>
-  
-  <!-- Render the application -->
-  <script type="text/babel">
-    // Wait for the JSX file to load and parse
-    setTimeout(() => {
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(<RentalInspectionApp />);
-      
-      // Hide loading screen
-      setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
-      }, 100);
-    }, 500);
+  <!-- Initialize app only after the JSX file has been loaded/transformed -->
+  <script>
+    // called when the JSX file finishes loading (onload on the JSX <script>)
+    function initApp() {
+      try {
+        // prefer the global variable if available; otherwise attempt to reference the symbol
+        const AppComponent = window.RentalInspectionApp || window.RentalInspectionApp === undefined ? window.RentalInspectionApp : (typeof RentalInspectionApp !== 'undefined' ? RentalInspectionApp : null);
+        // If the symbol is not available, try to use the identifier directly (this is robust across environments)
+        const app = (typeof RentalInspectionApp !== 'undefined') ? RentalInspectionApp : (window.RentalInspectionApp || null);
+        if (!app || !window.ReactDOM || !document.getElementById('root')) {
+          console.error('App or ReactDOM not available yet. initApp aborted.', { app, reactDom: !!window.ReactDOM });
+          return;
+        }
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        // Render using the component identifier directly (JSX transformed by Babel will define it)
+        root.render(React.createElement(typeof RentalInspectionApp !== 'undefined' ? RentalInspectionApp : window.RentalInspectionApp));
+      } catch (err) {
+        console.error('initApp error', err);
+      } finally {
+        // hide loading regardless to avoid stuck loader; if rendering failed user can see console output
+        const loader = document.getElementById('loading');
+        if (loader) loader.style.display = 'none';
+      }
+    }
   </script>
+
+  <!-- Load the JSX application file and call initApp when it's ready -->
+  <script type="text/babel" src="./rental-inspection-app-complete.jsx" onload="initApp()"></script>
+  
 </body>
 </html>
