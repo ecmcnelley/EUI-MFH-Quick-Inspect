@@ -1,0 +1,75 @@
+# 📱 QUICK INSTALL GUIDE
+
+## iPhone/iPad Installation
+```
+1. Open Safari (must use Safari!)
+2. Go to your app URL
+3. Tap Share button (□↑)
+4. Scroll down
+5. Tap "Add to Home Screen"
+6. Tap "Add"
+7. Icon appears on home screen
+8. Tap icon to launch
+```
+
+## Android Installation
+```
+1. Open Chrome browser
+2. Go to your app URL
+3. Tap menu (⋮) top right
+4. Tap "Install App" or "Add to Home Screen"
+5. Tap "Install"
+6. Icon appears in app drawer
+7. Tap icon to launch
+```
+
+## Desktop Installation
+```
+1. Open Chrome or Edge
+2. Go to your app URL
+3. Look for install icon in address bar (⊕)
+4. Click to install
+5. App opens in new window
+```
+
+## Your App URL
+```
+https://YOUR-USERNAME.github.io/rent-inspect-system/
+
+Replace YOUR-USERNAME with your GitHub username
+```
+
+## First Time Setup
+```
+1. Deploy files to GitHub
+2. Enable GitHub Pages
+3. Wait 1-2 minutes
+4. Visit URL
+5. Install on device
+6. Complete test inspection
+```
+
+## Features
+✅ Works offline after first load
+✅ Camera integration
+✅ Auto-save
+✅ Generate PDF reports
+✅ 16 properties pre-loaded
+✅ Room-by-room templates
+
+## Support
+📚 Full docs in ZIP file
+🆘 Check MOBILE-GUIDE.md
+💬 Open GitHub Issue
+
+## Quick Test
+After install:
+1. Open app
+2. Select property
+3. Enter unit number
+4. Complete workflow
+5. Generate report
+6. Verify PDF works
+
+---
+Version 2.1 Mobile Edition
